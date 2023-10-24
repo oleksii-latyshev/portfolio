@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     title: SITE_CONFIG.name,
     description: SITE_CONFIG.desc,
     siteName: SITE_CONFIG.name,
-    images: [`${SITE_CONFIG.url}/opengraph-image.png`],
+    images: [`${SITE_CONFIG.url}/api/og`],
   },
   twitter: {
     card: 'summary_large_image',
     title: SITE_CONFIG.name,
     description: SITE_CONFIG.desc,
-    images: [`${SITE_CONFIG.url}/twitter-image.png`],
+    images: [`${SITE_CONFIG.url}/api/og`],
     creator: '@EDM1GHT',
   },
 };
