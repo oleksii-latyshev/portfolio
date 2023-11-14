@@ -8,7 +8,6 @@ import { FC, Suspense, useEffect, useRef, useState } from 'react';
 
 import CanvasLoader from '@/components/canvas-loader';
 import { LG, MD, useWindowSize } from '@/hooks/use-window-size';
-import { cn } from '@/lib/utils';
 
 const mouseSpringOptions = {
   damping: 20,
@@ -26,7 +25,7 @@ const GhostCat: FC = ({}) => {
   const primitiveRef = useRef<PrimitiveMotionProps>(null);
   const [direction, setDirection] = useState(1);
   const { width } = useWindowSize();
-  const cat = useGLTF('./ghost-cat/scene.gltf');
+  const model = useGLTF('./ghost-cat/scene.gltf');
 
   const mouse = {
     x: useSpring(useMotionValue(0), mouseSpringOptions),
@@ -72,7 +71,7 @@ const GhostCat: FC = ({}) => {
     <motion.primitive
       ref={primitiveRef}
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      object={cat.scene}
+      object={model.scene}
       scale={conditionalScale}
       rotation-x={mouse.y}
       rotation-y={mouse.x}
@@ -81,39 +80,32 @@ const GhostCat: FC = ({}) => {
   );
 };
 
-type GhostCatCanvasProps = {
-  className?: string;
-};
-
-export const GhostCatCanvas: FC<GhostCatCanvasProps> = ({ className }) => {
+export const GhostCatCanvas: FC = () => {
   return (
-    <div className={cn('h-fit w-fit', className)}>
-      <Canvas
-        shadows
-        dpr={[1, 2]}
-        gl={{ preserveDrawingBuffer: true }}
-        camera={{
-          // fov: 45,
-          near: 0.1,
-          far: 200,
-        }}
-      >
-        <Suspense fallback={<CanvasLoader />}>
-          <ambientLight intensity={0.25} />
-          <directionalLight position={[0, 0, 0.05]} />
-          <OrbitControls
-            enableRotate={false}
-            enablePan={false}
-            enableZoom={false}
-            maxPolarAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 2}
-          />
+    <Canvas
+      shadows
+      dpr={[1, 2]}
+      gl={{ preserveDrawingBuffer: true }}
+      camera={{
+        // fov: 45,
+        near: 0.1,
+        far: 200,
+      }}
+    >
+      <Suspense fallback={<CanvasLoader />}>
+        <ambientLight intensity={0.25} />
+        <directionalLight position={[0, 0, 0.05]} />
+        <OrbitControls
+          enableRotate={false}
+          enablePan={false}
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
 
-          <GhostCat />
-        </Suspense>
-
+        <GhostCat />
         <Preload all />
-      </Canvas>
-    </div>
+      </Suspense>
+    </Canvas>
   );
 };

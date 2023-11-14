@@ -16,7 +16,7 @@ export const ThemeSwitcher: FC = () => {
 
   return (
     <button
-      className='fixed bottom-5 right-5 flex h-[3rem] w-[3rem] items-center justify-center rounded-full bg-secondary/60 shadow-xl transition-all hover:scale-[1.15] hover:bg-muted active:scale-105'
+      className='fixed bottom-5 right-5 flex h-[3rem] w-[3rem] items-center justify-center rounded-full bg-secondary/60 shadow-xl backdrop-blur-lg transition-all hover:scale-[1.15] hover:bg-muted active:scale-105'
       onClick={() => {
         setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
       }}

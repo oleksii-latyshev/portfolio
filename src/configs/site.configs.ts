@@ -1,4 +1,4 @@
-import { INavigation, ISocialLink } from '@/types';
+import { IInteractiveIcon, INavigation } from '@/types';
 
 export const NAVIGATION: readonly INavigation[] = [
   {
@@ -23,7 +23,7 @@ export const NAVIGATION: readonly INavigation[] = [
   },
 ];
 
-export const SOCIAL_LINKS: readonly ISocialLink[] = [
+export const SOCIAL_LINKS: readonly IInteractiveIcon[] = [
   {
     title: 'Github',
     icon: 'github',

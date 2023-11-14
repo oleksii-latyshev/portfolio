@@ -5,7 +5,7 @@ type LayoutProps = {
 };
 
 const Layout: FC<LayoutProps> = ({ children }) => {
-  return <main className='container'>{children}</main>;
+  return <main className='container scroll-smooth'>{children}</main>;
 };
 
 export default Layout;

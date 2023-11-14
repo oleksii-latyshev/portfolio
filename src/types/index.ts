@@ -5,7 +5,7 @@ export type INavigation = {
   link: string;
 };
 
-export type ISocialLink = {
+export type IInteractiveIcon = {
   title: string;
   icon: keyof typeof Icons;
   href: string;
