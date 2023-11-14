@@ -1,4 +1,4 @@
-import { INavigation, ISocialLink } from '@/types/config.types';
+import { INavigation, ISocialLink } from '@/types';
 
 export const NAVIGATION: readonly INavigation[] = [
   {
@@ -30,14 +30,19 @@ export const SOCIAL_LINKS: readonly ISocialLink[] = [
     href: 'https://github.com/EDMIGHT',
   },
   {
+    title: 'LinkedIn',
+    icon: 'linkedin',
+    href: 'https://www.linkedin.com/in/oleksii-latyshev/',
+  },
+  {
     title: 'Telegram',
     icon: 'telegram',
-    href: 'https://github.com/EDMIGHT',
+    href: 'https://t.me/edmight',
   },
   {
     title: 'Gmail',
-    icon: 'telegram',
-    href: 'https://github.com/EDMIGHT',
+    icon: 'mail',
+    href: 'https://mail.google.com/mail/u/0/?to=oleksii.latyshevskiy@gmail.com&fs=1&tf=cm',
   },
 ];
 

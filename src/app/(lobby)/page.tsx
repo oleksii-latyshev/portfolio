@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import { FC } from 'react';
 
+import { HeroSection } from '@/components/hero-section';
+import { Menu } from '@/components/menu';
+
 export const metadata: Metadata = {
   title: 'Portfolio',
 };
@@ -8,7 +11,8 @@ export const metadata: Metadata = {
 const Page: FC = ({}) => {
   return (
     <>
-      <div className=' h-40 w-40 rounded-full bg-blue-400 blur-[6rem]' />
+      <Menu />
+      <HeroSection />
     </>
   );
 };
