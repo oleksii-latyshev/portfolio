@@ -6,21 +6,14 @@ import { motion } from 'framer-motion-3d';
 import { FC, Suspense } from 'react';
 
 import CanvasLoader from '@/components/canvas-loader';
-import { LG, useWindowSize } from '@/hooks/use-window-size';
-import { cn } from '@/lib/utils';
 
-const HalloweenCat: FC = ({}) => {
-  const { width } = useWindowSize();
-  // const model = useGLTF('./planet/scene.gltf');
+const HalloweenCat: FC = () => {
   const model = useGLTF('./halloween-cat/scene.gltf');
-
-  const conditionalScale = width ? (width < LG ? 2.5 : 2.8) : 2.8;
 
   return (
     <motion.primitive
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       object={model.scene}
-      // scale={conditionalScale}
       scale={2.3}
       position={[0, -1.2, 0]}
       rotation-y={0}
@@ -28,11 +21,7 @@ const HalloweenCat: FC = ({}) => {
   );
 };
 
-type HalloweenCatCanvasProps = {
-  className?: string;
-};
-
-export const HalloweenCatCanvas: FC<HalloweenCatCanvasProps> = ({ className }) => {
+export const HalloweenCatCanvas: FC = () => {
   return (
     <Canvas
       shadows

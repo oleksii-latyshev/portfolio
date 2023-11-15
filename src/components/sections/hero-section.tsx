@@ -30,15 +30,14 @@ export const HeroSection: FC = ({}) => {
         <h2 className='text-3xl font-semibold uppercase tracking-tight text-muted-foreground lg:text-5xl'>
           Fullstack developer
         </h2>
-        <ul className='flex items-center gap-2'>
-          {SOCIAL_LINKS.map(({ icon, href, title }, i) => {
+        <ul className='flex flex-wrap items-center gap-2'>
+          {SOCIAL_LINKS.map(({ icon, href }, i) => {
             const Icon = Icons[icon];
 
             return (
               <li key={i}>
                 <a
                   href={href}
-                  about={title}
                   target='_blank'
                   className={cn(
                     buttonVariants({ variant: 'ghost', size: 'icon' }),
@@ -52,8 +51,7 @@ export const HeroSection: FC = ({}) => {
           })}
           <li>
             <a
-              href='./CV.pdf'
-              about='CV file'
+              href='./cv.pdf'
               target='_blank'
               className={cn(
                 buttonVariants({ variant: 'ghost', size: 'icon' }),
@@ -66,7 +64,7 @@ export const HeroSection: FC = ({}) => {
         </ul>
       </motion.div>
 
-      <div className='pointer-events-none h-[500px] w-[200px] md:basis-1/3'>
+      <div className='pointer-events-auto h-[500px] w-[200px] md:basis-1/3'>
         <GhostCatCanvas />
       </div>
     </section>

@@ -14,7 +14,7 @@ export const Menu: FC = ({}) => {
   return (
     <nav className='relative z-[777]'>
       <motion.div
-        className='fixed left-1/2 top-0 h-[4.5rem] w-full rounded-none bg-secondary/60 shadow-lg backdrop-blur-lg sm:top-6 sm:h-[3.25rem] sm:w-[29rem] sm:rounded-full'
+        className='fixed left-1/2 top-0 h-[4.5rem] w-full rounded-none bg-secondary/60 shadow-lg backdrop-blur-lg sm:top-6 sm:h-[3.25rem] sm:w-[33rem] sm:rounded-full'
         initial={{ y: -100, x: '-50%', opacity: 0 }}
         animate={{ y: 0, x: '-50%', opacity: 1 }}
       />

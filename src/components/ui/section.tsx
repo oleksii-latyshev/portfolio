@@ -5,16 +5,9 @@ import { forwardRef, HTMLAttributes } from 'react';
 
 import { cn } from '@/lib/utils';
 
-export const Section = forwardRef<HTMLDivElement, HTMLMotionProps<'section'>>(
+export const Section = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
-    <motion.section
-      ref={ref}
-      className={cn('space-y-4 lg:space-y-6', className)}
-      initial={{ scale: 0, y: 100 }}
-      animate={{ scale: 1, y: 0 }}
-      transition={{ delay: 0.175 }}
-      {...props}
-    />
+    <section ref={ref} className={cn('space-y-4 lg:space-y-6', className)} {...props} />
   )
 );
 
@@ -43,9 +36,16 @@ export const SectionTitle = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHe
 
 SectionTitle.displayName = 'SectionTitle';
 
-export const SectionContent = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
+export const SectionContent = forwardRef<HTMLDivElement, HTMLMotionProps<'section'>>(
   ({ className, ...props }, ref) => (
-    <div ref={ref} className={cn('lg:p-6 pt-0', className)} {...props} />
+    <motion.section
+      ref={ref}
+      className={cn('lg:p-6 pt-0', className)}
+      initial={{ scale: 0, y: 100 }}
+      animate={{ scale: 1, y: 0 }}
+      transition={{ delay: 0.175 }}
+      {...props}
+    />
   )
 );
 

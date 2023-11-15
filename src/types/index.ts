@@ -11,4 +11,18 @@ export type IInteractiveIcon = {
   href: string;
 };
 
-export type ISectionName = 'Home' | 'About' | 'Projects' | 'Experience' | 'Contact';
+export type ISectionName = 'Home' | 'About' | 'Projects' | 'Skills' | 'Experience' | 'Contact';
+
+export type IFavoriteProject = {
+  title: string;
+  img: string;
+  desc: string;
+  technologies: ITechnology[];
+  repo: string;
+  demo: string;
+};
+
+export type ITechnology = {
+  title: string;
+  link: string;
+};
