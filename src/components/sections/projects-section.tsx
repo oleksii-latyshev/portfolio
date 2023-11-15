@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { FC } from 'react';
 
 import { Badge } from '@/components/ui/badge';
@@ -79,12 +78,13 @@ export const ProjectsSection: FC = ({}) => {
             </li>
           ))}
         </ul>
-        <Link
-          href='/projects'
-          className='flex items-center justify-center text-2xl transition-colors hover:text-muted-foreground focus:text-muted-foreground'
+        <a
+          href='https://github.com/EDMIGHT?tab=repositories'
+          target='_blank'
+          className='mx-auto block w-fit text-xl transition-colors hover:text-muted-foreground focus:text-muted-foreground lg:text-2xl'
         >
-          &lt; Explore more my projects &gt;
-        </Link>
+          Explore more my projects
+        </a>
       </SectionContent>
     </Section>
   );
