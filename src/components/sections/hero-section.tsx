@@ -17,7 +17,7 @@ export const HeroSection: FC = () => {
     <section
       ref={ref}
       id='home'
-      className='flex h-screen w-full flex-col items-center justify-center pt-[6rem] md:flex-row md:justify-between'
+      className='flex h-screen w-full flex-col items-center justify-center md:flex-row md:justify-between'
     >
       <motion.div
         className='space-y-2 md:basis-2/3'

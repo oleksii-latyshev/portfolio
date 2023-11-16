@@ -17,17 +17,16 @@ export const SkillsSection: FC = () => {
         <SectionTitle>Skills</SectionTitle>
       </SectionHeader>
       <SectionContent className='flex flex-col gap-8 lg:flex-row'>
-        <div className='md:basis-3/5'>
-          <ul className='flex flex-col justify-center gap-3'>
-            {SKILLS.map(({ title, technologies }) => (
-              <li key={title} className='space-y-1'>
-                <h3 className='text-lg font-semibold lg:text-xl'>{title}:</h3>
-                <Technologies technologies={technologies} />
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className='pointer-events-none flex h-[500px] cursor-grab items-center justify-center lg:basis-2/5'>
+        <ul className='flex flex-1 flex-col justify-center gap-3'>
+          {SKILLS.map(({ title, technologies }) => (
+            <li key={title} className='space-y-1'>
+              <h3 className='text-lg font-semibold lg:text-xl'>{title}:</h3>
+              <Technologies technologies={technologies} />
+            </li>
+          ))}
+        </ul>
+
+        <div className='pointer-events-none flex h-[400px] flex-1 cursor-grab items-center justify-center lg:w-[400px] lg:flex-initial'>
           <BookCanvas />
         </div>
       </SectionContent>

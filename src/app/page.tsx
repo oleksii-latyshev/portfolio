@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const Page: FC = ({}) => {
   return (
-    <main className='container space-y-4 md:space-y-6'>
+    <main className='container space-y-4 pt-[4.5rem] sm:pt-[3.25rem] md:space-y-6'>
       <HeroSection />
       <AboutSection />
       <ProjectsSection />
