@@ -10,14 +10,14 @@ import { SOCIAL_LINKS } from '@/configs/site.configs';
 import { useSectionInView } from '@/hooks/use-section-in-view';
 import { cn } from '@/lib/utils';
 
-export const HeroSection: FC = ({}) => {
-  const { ref } = useSectionInView('Home', 0.5);
+export const HeroSection: FC = () => {
+  const { ref } = useSectionInView('Home');
 
   return (
     <section
       ref={ref}
       id='home'
-      className='flex h-screen w-full flex-col items-center justify-center pt-[6rem] md:flex-row md:justify-between md:pt-0'
+      className='flex h-screen w-full flex-col items-center justify-center pt-[6rem] md:flex-row md:justify-between'
     >
       <motion.div
         className='space-y-2 md:basis-2/3'
@@ -64,7 +64,7 @@ export const HeroSection: FC = ({}) => {
         </ul>
       </motion.div>
 
-      <div className='pointer-events-auto h-[500px] w-[200px] md:basis-1/3'>
+      <div className='pointer-events-none h-[500px] w-[200px] md:basis-1/3'>
         <GhostCatCanvas />
       </div>
     </section>

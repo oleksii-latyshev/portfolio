@@ -5,9 +5,6 @@ type WindowSize = {
   height?: number;
 };
 
-export const LG = 1024;
-export const MD = 768;
-
 export const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState<WindowSize>({
     width: undefined,

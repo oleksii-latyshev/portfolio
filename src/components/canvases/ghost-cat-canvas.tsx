@@ -7,7 +7,7 @@ import { motion } from 'framer-motion-3d';
 import { FC, Suspense, useEffect, useRef, useState } from 'react';
 
 import CanvasLoader from '@/components/canvas-loader';
-import { LG, MD, useWindowSize } from '@/hooks/use-window-size';
+import { LG, MD, useWindowBreakpoint } from '@/hooks/use-window-breakpoint';
 
 const mouseSpringOptions = {
   damping: 20,
@@ -24,8 +24,10 @@ export type PrimitiveMotionProps = PrimitiveProps & {
 const GhostCat: FC = ({}) => {
   const primitiveRef = useRef<PrimitiveMotionProps>(null);
   const [direction, setDirection] = useState(1);
-  const { width } = useWindowSize();
   const model = useGLTF('./ghost-cat/scene.gltf');
+
+  const isMdBreakpoint = useWindowBreakpoint(MD);
+  const isLgBreakpoint = useWindowBreakpoint(LG);
 
   const mouse = {
     x: useSpring(useMotionValue(0), mouseSpringOptions),
@@ -37,8 +39,8 @@ const GhostCat: FC = ({}) => {
       const { innerWidth, innerHeight } = window;
       const { clientX, clientY } = e;
 
-      const xConditionalValue = width ? (width > MD ? -0.7 : -0.5) : -0.5;
-      const yConditionalValue = width ? (width > MD ? -0.4 : -0.5) : -0.5;
+      const xConditionalValue = isMdBreakpoint ? -0.7 : -0.5;
+      const yConditionalValue = isMdBreakpoint ? -0.4 : -0.5;
 
       const x = xConditionalValue + clientX / innerWidth;
       const y = yConditionalValue + clientY / innerHeight;
@@ -49,7 +51,7 @@ const GhostCat: FC = ({}) => {
     window.addEventListener('mousemove', manageMouseMove);
 
     return () => window.removeEventListener('mousemove', manageMouseMove);
-  }, [width]);
+  }, [isMdBreakpoint]);
 
   const y = useSpring(0, jumpingSpringOptions);
 
@@ -65,7 +67,7 @@ const GhostCat: FC = ({}) => {
     }
   });
 
-  const conditionalScale = width ? (width < LG ? 2.5 : 2.8) : 2.8;
+  const conditionalScale = isLgBreakpoint ? 2.8 : 2.5;
 
   return (
     <motion.primitive
@@ -87,14 +89,13 @@ export const GhostCatCanvas: FC = () => {
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
       camera={{
-        // fov: 45,
         near: 0.1,
         far: 200,
       }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <ambientLight intensity={0.25} />
-        <directionalLight position={[0, 0, 0.05]} />
+        <directionalLight intensity={1.5} position={[0, 0, 0.05]} />
         <OrbitControls
           enableRotate={false}
           enablePan={false}

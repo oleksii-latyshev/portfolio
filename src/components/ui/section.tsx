@@ -1,6 +1,5 @@
 'use client';
 
-import { HTMLMotionProps, motion } from 'framer-motion';
 import { forwardRef, HTMLAttributes } from 'react';
 
 import { cn } from '@/lib/utils';
@@ -36,16 +35,9 @@ export const SectionTitle = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHe
 
 SectionTitle.displayName = 'SectionTitle';
 
-export const SectionContent = forwardRef<HTMLDivElement, HTMLMotionProps<'section'>>(
+export const SectionContent = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
-    <motion.section
-      ref={ref}
-      className={cn('lg:p-6 pt-0', className)}
-      initial={{ scale: 0, y: 100 }}
-      animate={{ scale: 1, y: 0 }}
-      transition={{ delay: 0.175 }}
-      {...props}
-    />
+    <section ref={ref} className={cn('lg:p-6 pt-0', className)} {...props} />
   )
 );
 

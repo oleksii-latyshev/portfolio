@@ -22,12 +22,12 @@ export const MAIN_STACK_TECHNOLOGIES: readonly IInteractiveIcon[] = [
     href: 'https://expressjs.com/',
   },
   {
-    title: 'Tailwind CSS',
+    title: 'Tailwind',
     icon: 'tailwindcss',
     href: 'https://tailwindcss.com/',
   },
   {
-    title: 'Prisma ORM',
+    title: 'Prisma',
     icon: 'prismaORM',
     href: 'https://www.prisma.io/',
   },
@@ -79,7 +79,7 @@ export const MY_FAVORITE_PROJECTS: readonly IFavoriteProject[] = [
   {
     title: 'social',
     img: '/projects/social.webp',
-    desc: 'A social media platform featuring fundamental social networking functionalities: users can create posts, engage through likes, comments, and follow other users',
+    desc: "It's a web application functioning as a social network, encompassing key features found in typical social platforms.",
     technologies: [
       {
         title: 'react',
@@ -142,8 +142,115 @@ export const MY_FAVORITE_PROJECTS: readonly IFavoriteProject[] = [
         title: 'passport.js',
         link: 'https://www.passportjs.org/',
       },
+      {
+        title: 'docker',
+        link: 'https://www.docker.com/',
+      },
     ],
     repo: 'https://github.com/EDMIGHT/sushi-shop',
     demo: 'https://sushi-shop.azurewebsites.net/',
+  },
+];
+
+type ISkill = {
+  title: string;
+  technologies: readonly IInteractiveIcon[];
+};
+
+export const SKILLS: ISkill[] = [
+  {
+    title: 'Languages',
+    technologies: [
+      {
+        title: 'TypeScript',
+        icon: 'typescript',
+        href: 'https://www.typescriptlang.org/',
+      },
+      {
+        title: 'C#',
+        icon: 'csharp',
+        href: 'https://dotnet.microsoft.com/en-us/languages/csharp',
+      },
+      {
+        title: 'Sass',
+        icon: 'sass',
+        href: 'https://sass-lang.com/',
+      },
+    ],
+  },
+  {
+    title: 'Frontend',
+    technologies: [
+      {
+        title: 'Next.js',
+        icon: 'nextJs',
+        href: 'https://nextjs.org/',
+      },
+      {
+        title: 'React',
+        icon: 'react',
+        href: 'https://react.dev/',
+      },
+      {
+        title: 'Tailwind',
+        icon: 'tailwindcss',
+        href: 'https://tailwindcss.com/',
+      },
+      {
+        title: 'Redux Toolkit',
+        icon: 'redux',
+        href: 'https://redux-toolkit.js.org/',
+      },
+    ],
+  },
+  {
+    title: 'Backend',
+    technologies: [
+      {
+        title: 'Node.js',
+        icon: 'nodejs',
+        href: 'https://nodejs.org/en',
+      },
+      {
+        title: 'Express.js',
+        icon: 'expressJs',
+        href: 'https://expressjs.com/',
+      },
+      {
+        title: 'Prisma',
+        icon: 'prismaORM',
+        href: 'https://www.prisma.io/',
+      },
+      {
+        title: 'MySQL',
+        icon: 'mysql',
+        href: 'https://www.mysql.com/',
+      },
+      {
+        title: 'MongoDB',
+        icon: 'mongodb',
+        href: 'https://www.mongodb.com/',
+      },
+    ],
+  },
+  {
+    title: 'Tools',
+    technologies: [
+      {
+        title: 'Figma',
+        icon: 'figma',
+        href: 'https://www.figma.com/',
+      },
+      {
+        title: 'Docker',
+        icon: 'docker',
+        href: 'https://www.docker.com/',
+      },
+      {
+        title: 'Jira',
+        icon: 'jira',
+        href: 'https://www.atlassian.com/software/jira',
+      },
+    ],
   },
 ];

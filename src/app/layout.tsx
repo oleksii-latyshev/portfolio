@@ -2,6 +2,7 @@ import '@/assets/styles/globals.css';
 
 import type { Metadata } from 'next';
 
+import { Menu } from '@/components/menu';
 import { ActiveSectionContextProvider } from '@/components/providers/active-section-context-provider';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { TailwindIndicator } from '@/components/tailwind-indicator';
@@ -53,12 +54,13 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang='en'>
+    <html lang='en' className='!scroll-smooth'>
       <body
         className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}
       >
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <ActiveSectionContextProvider>
+            <Menu />
             {children}
             <TailwindIndicator />
             <ThemeSwitcher />

@@ -35,10 +35,9 @@ export const HalloweenCatCanvas: FC = () => {
       }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        <ambientLight intensity={1.5} />
-        <directionalLight intensity={1} position={[0, 0, 0.1]} />
-        <pointLight intensity={0.5} position={[5, 5, 5]} />
-        <directionalLight intensity={1} position={[0, 0, -1]} />
+        <ambientLight intensity={2} />
+        <directionalLight intensity={2} position={[0, 0, 0.1]} />
+        <directionalLight intensity={2} position={[0, 0, -1]} />
         <OrbitControls
           autoRotate
           enablePan={false}
