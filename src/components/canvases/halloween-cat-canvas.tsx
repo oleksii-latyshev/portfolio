@@ -40,6 +40,7 @@ export const HalloweenCatCanvas: FC = () => {
         <directionalLight intensity={2} position={[0, 0, -1]} />
         <OrbitControls
           autoRotate
+          autoRotateSpeed={0.8}
           enablePan={false}
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}

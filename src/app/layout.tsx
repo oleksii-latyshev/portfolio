@@ -13,10 +13,7 @@ import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
-  title: {
-    default: SITE_CONFIG.name,
-    template: `${SITE_CONFIG.name} • %s`,
-  },
+  title: `${SITE_CONFIG.name} • Portfolio`,
   description: SITE_CONFIG.desc,
   keywords: SITE_CONFIG.keywords,
   authors: [
@@ -28,7 +25,7 @@ export const metadata: Metadata = {
   creator: 'Oleksii Latyshev',
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
+    { media: '(prefers-color-scheme: dark)', color: 'dimgrey' },
   ],
   openGraph: {
     type: 'website',

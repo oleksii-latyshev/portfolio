@@ -19,7 +19,7 @@ export const AboutSection: FC = () => {
         <SectionTitle>About me</SectionTitle>
       </SectionHeader>
       <SectionContent className='flex flex-col-reverse gap-8 lg:flex-row'>
-        <div className='pointer-events-none flex h-[400px] cursor-grab items-center justify-center lg:w-[350px] lg:flex-[0.4]'>
+        <div className='pointer-events-none flex h-[350px] cursor-grab items-center justify-center lg:h-[400px] lg:w-[350px]'>
           <HalloweenCatCanvas />
         </div>
         <motion.div

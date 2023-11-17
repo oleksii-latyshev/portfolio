@@ -7,6 +7,7 @@ import { Technologies } from '@/components/technologies';
 import { Section, SectionContent, SectionHeader, SectionTitle } from '@/components/ui/section';
 import { SKILLS } from '@/configs/my.configs';
 import { useSectionInView } from '@/hooks/use-section-in-view';
+import { cn } from '@/lib/utils';
 
 export const SkillsSection: FC = () => {
   const { ref } = useSectionInView('Skills');
@@ -26,7 +27,11 @@ export const SkillsSection: FC = () => {
           ))}
         </ul>
 
-        <div className='pointer-events-none flex h-[400px] flex-1 cursor-grab items-center justify-center lg:w-[400px] lg:flex-initial'>
+        <div
+          className={cn(
+            'pointer-events-none flex h-[350px] cursor-grab items-center justify-center lg:h-[400px] lg:w-[400px]'
+          )}
+        >
           <BookCanvas />
         </div>
       </SectionContent>
