@@ -28,7 +28,7 @@ const fadeInAnimationVariants = {
 
 export const Technologies: FC<TechnologiesProps> = ({ technologies }) => {
   return (
-    <ul className='grid grid-cols-[repeat(auto-fit,100px)]  gap-2'>
+    <ul className='grid grid-cols-[repeat(auto-fill,minmax(85px,max-content))]  gap-2 lg:grid-cols-[repeat(auto-fill,minmax(100px,max-content))]'>
       {technologies.map(({ title, href, icon }, i) => {
         const Icon = Icons[icon];
 
@@ -48,11 +48,13 @@ export const Technologies: FC<TechnologiesProps> = ({ technologies }) => {
               target='_blank'
               className={cn(
                 buttonVariants({ variant: 'ghost', size: 'icon' }),
-                'p-2 h-full w-fit min-w-[100px] flex flex-col justify-start items-center gap-2 '
+                'p-2 h-full w-fit min-w-[85px] lg:min-w-[100px] flex flex-col justify-start items-center gap-2 '
               )}
             >
-              <Icon className='h-10 w-10 shrink-0' />
-              <h4 className='whitespace-nowrap text-center font-medium'>{title}</h4>
+              <Icon className='h-8 w-8 shrink-0 lg:h-10 lg:w-10' />
+              <h4 className='whitespace-nowrap text-center text-sm font-medium lg:text-base'>
+                {title}
+              </h4>
             </a>
           </motion.li>
         );

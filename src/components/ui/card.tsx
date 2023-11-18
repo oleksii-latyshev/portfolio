@@ -3,11 +3,10 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
-const cardVariants = cva('rounded shadow', {
+export const cardVariants = cva('block rounded-lg shadow', {
   variants: {
     variant: {
       default: 'border bg-card text-card-foreground',
-      transparent: 'border-none shadow-none',
     },
   },
   defaultVariants: {
@@ -36,7 +35,7 @@ CardHeader.displayName = 'CardHeader';
 const CardTitle = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement> & {
-    as?: 'h1' | 'h2' | 'h3';
+    as?: 'h1' | 'h2' | 'h3' | 'h4';
   }
 >(({ className, as: Component = 'h3', ...props }, ref) => (
   <Component

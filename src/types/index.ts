@@ -11,7 +11,7 @@ export type IInteractiveIcon = {
   href: string;
 };
 
-export type ISectionName = 'Home' | 'About' | 'Projects' | 'Skills' | 'Experience' | 'Contact';
+export type ISectionName = 'Home' | 'About' | 'Projects' | 'Skills' | 'Education' | 'Contact';
 
 export type IFavoriteProject = {
   title: string;
@@ -24,5 +24,12 @@ export type IFavoriteProject = {
 
 export type ITechnology = {
   title: string;
+  link: string;
+};
+
+export type IQualificationItem = {
+  title: string;
+  desc: string;
+  time: string;
   link: string;
 };

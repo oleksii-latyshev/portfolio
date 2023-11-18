@@ -37,7 +37,12 @@ export const BookCanvas: FC = () => {
         <ambientLight intensity={1.5} />
         <directionalLight intensity={1.5} position={[0, 0, 0.1]} />
         <directionalLight intensity={1.5} position={[0, 0, -1]} />
-        <OrbitControls autoRotate autoRotateSpeed={0.8} enablePan={false} enableZoom={false} />
+        <OrbitControls
+          autoRotate
+          autoRotateSpeed={0.85}
+          enablePan={false}
+          enableZoom={false}
+        />
         <Book />
 
         <Preload all />

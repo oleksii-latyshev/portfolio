@@ -18,8 +18,8 @@ export const NAVIGATION: readonly INavigation[] = [
     link: '#skills',
   },
   {
-    name: 'Experience',
-    link: '#experience',
+    name: 'Education',
+    link: '#education',
   },
   {
     name: 'Contact',

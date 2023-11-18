@@ -14,7 +14,7 @@ export const AboutSection: FC = () => {
   const { ref } = useSectionInView('About', 0.5);
 
   return (
-    <Section ref={ref} id='about'>
+    <Section ref={ref} id='about' className='scroll-mt-[6rem]'>
       <SectionHeader>
         <SectionTitle>About me</SectionTitle>
       </SectionHeader>
