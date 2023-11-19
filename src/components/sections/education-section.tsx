@@ -23,7 +23,7 @@ export const EducationSection: FC = ({}) => {
   const { ref } = useSectionInView('Education');
 
   return (
-    <Section ref={ref} id='education' className='scroll-mt-[6rem]'>
+    <Section ref={ref} id='education'>
       <SectionHeader>
         <SectionTitle>Education</SectionTitle>
       </SectionHeader>
@@ -49,7 +49,7 @@ export const EducationSection: FC = ({}) => {
                   viewport={{
                     once: true,
                   }}
-                  className='h-full w-full rounded-full border-none bg-primary'
+                  className='h-full w-full rounded-full bg-primary'
                 />
               </TimelineIcon>
               <TimelineCard>

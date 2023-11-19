@@ -14,6 +14,7 @@ export const buttonVariants = cva(
           'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
         outline:
           'border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground',
+        link: 'flex w-fit text-xl text-muted-foreground hover:text-primary',
       },
       size: {
         default: 'h-9 px-2 py-1',

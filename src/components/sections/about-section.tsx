@@ -5,16 +5,18 @@ import { FC } from 'react';
 
 import { HalloweenCatCanvas } from '@/components/canvases/halloween-cat-canvas';
 import { Technologies } from '@/components/technologies';
+import { buttonVariants } from '@/components/ui/button';
 import { Icons } from '@/components/ui/icons';
 import { Section, SectionContent, SectionHeader, SectionTitle } from '@/components/ui/section';
 import { MAIN_STACK_TECHNOLOGIES } from '@/configs/my.configs';
 import { useSectionInView } from '@/hooks/use-section-in-view';
+import { cn } from '@/lib/utils';
 
 export const AboutSection: FC = () => {
   const { ref } = useSectionInView('About', 0.5);
 
   return (
-    <Section ref={ref} id='about' className='scroll-mt-[6rem]'>
+    <Section ref={ref} id='about'>
       <SectionHeader>
         <SectionTitle>About me</SectionTitle>
       </SectionHeader>
@@ -56,7 +58,10 @@ export const AboutSection: FC = () => {
           <a
             href='./cv.pdf'
             target='_blank'
-            className='flex items-center justify-end gap-1 text-end text-xl font-medium text-muted-foreground transition-all hover:gap-2 hover:text-primary'
+            className={cn(
+              buttonVariants({ variant: 'link' }),
+              'gap-1 hover:gap-2 transition-all ml-auto'
+            )}
           >
             Download CV
             <Icons.arrowRight />

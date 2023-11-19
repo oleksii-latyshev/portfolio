@@ -5,8 +5,10 @@ import Image from 'next/image';
 import { FC, useRef } from 'react';
 
 import { Badge } from '@/components/ui/badge';
+import { buttonVariants } from '@/components/ui/button';
 import { Icons } from '@/components/ui/icons';
 import { MY_FAVORITE_PROJECTS } from '@/configs/my.configs';
+import { cn } from '@/lib/utils';
 
 type ProjectProps = (typeof MY_FAVORITE_PROJECTS)[number];
 
@@ -66,14 +68,17 @@ export const Project: FC<ProjectProps> = ({ title, desc, img, demo, technologies
           <a
             href={repo}
             target='_blank'
-            className='flex items-center justify-end gap-1 text-lg font-medium text-muted-foreground transition-all hover:text-primary'
+            className={cn(buttonVariants({ variant: 'link' }), 'text-lg p-0 gap-1 ')}
           >
             Source code <Icons.github className='h-5 w-5' />
           </a>
           <a
             href={demo}
             target='_blank'
-            className='flex items-center justify-end gap-1 text-lg font-medium text-muted-foreground transition-all hover:gap-2 hover:text-primary'
+            className={cn(
+              buttonVariants({ variant: 'link' }),
+              'gap-1 hover:gap-2 transition-all ml-auto text-lg'
+            )}
           >
             Demo <Icons.arrowRight className='h-5 w-5' />
           </a>

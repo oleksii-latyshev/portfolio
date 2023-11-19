@@ -6,7 +6,11 @@ import { cn } from '@/lib/utils';
 
 export const Section = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
-    <section ref={ref} className={cn('space-y-4 lg:space-y-6', className)} {...props} />
+    <section
+      ref={ref}
+      className={cn('space-y-4 lg:space-y-6 scroll-mt-[6rem]', className)}
+      {...props}
+    />
   )
 );
 

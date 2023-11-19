@@ -17,7 +17,7 @@ export const HeroSection: FC = () => {
     <section
       ref={ref}
       id='home'
-      className='flex h-[calc(100vh-4.5rem)] w-full scroll-mt-[4.5rem] flex-col items-center justify-center py-3 sm:h-[calc(100vh-3.25rem)] md:flex-row md:justify-between'
+      className='flex h-[calc(100vh-4.5rem)] w-full scroll-mt-[4.5rem] flex-col items-center justify-center sm:h-[calc(100vh-3.25rem)] md:flex-row md:justify-between'
     >
       <motion.div
         className='space-y-2 md:basis-2/3'
@@ -64,7 +64,7 @@ export const HeroSection: FC = () => {
         </ul>
       </motion.div>
 
-      <div className='pointer-events-none h-[450px] w-[200px] md:h-[500px] md:basis-1/3'>
+      <div className='pointer-events-none h-[400px] w-[200px] basis-auto md:h-[500px] md:basis-1/3'>
         <GhostCatCanvas />
       </div>
     </section>

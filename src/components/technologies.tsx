@@ -12,30 +12,28 @@ type TechnologiesProps = {
   technologies: readonly IInteractiveIcon[];
 };
 
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.05 * index,
-    },
-  }),
-};
-
 export const Technologies: FC<TechnologiesProps> = ({ technologies }) => {
   return (
-    <ul className='grid grid-cols-[repeat(auto-fill,minmax(85px,max-content))]  gap-2 lg:grid-cols-[repeat(auto-fill,minmax(100px,max-content))]'>
+    <ul className='grid grid-cols-[repeat(auto-fill,minmax(85px,max-content))] justify-items-center  gap-2 lg:grid-cols-[repeat(auto-fill,minmax(100px,max-content))]'>
       {technologies.map(({ title, href, icon }, i) => {
         const Icon = Icons[icon];
 
         return (
           <motion.li
             key={icon}
-            variants={fadeInAnimationVariants}
+            variants={{
+              initial: {
+                opacity: 0,
+                y: 100,
+              },
+              animate: (index: number) => ({
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.05 * index,
+                },
+              }),
+            }}
             initial='initial'
             whileInView='animate'
             viewport={{
@@ -48,7 +46,7 @@ export const Technologies: FC<TechnologiesProps> = ({ technologies }) => {
               target='_blank'
               className={cn(
                 buttonVariants({ variant: 'ghost', size: 'icon' }),
-                'p-2 h-full w-fit min-w-[85px] lg:min-w-[100px] flex flex-col justify-start items-center gap-2 '
+                'p-2 h-full w-full min-w-[85px] lg:min-w-[100px] flex flex-col justify-start items-center gap-2 '
               )}
             >
               <Icon className='h-8 w-8 shrink-0 lg:h-10 lg:w-10' />

@@ -13,7 +13,7 @@ export const SkillsSection: FC = () => {
   const { ref } = useSectionInView('Skills');
 
   return (
-    <Section ref={ref} id='skills' className='scroll-mt-[6rem]'>
+    <Section ref={ref} id='skills'>
       <SectionHeader>
         <SectionTitle>Skills</SectionTitle>
       </SectionHeader>

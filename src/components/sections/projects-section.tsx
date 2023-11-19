@@ -3,15 +3,17 @@
 import { FC } from 'react';
 
 import { Project } from '@/components/project';
+import { buttonVariants } from '@/components/ui/button';
 import { Section, SectionContent, SectionHeader, SectionTitle } from '@/components/ui/section';
 import { MY_FAVORITE_PROJECTS } from '@/configs/my.configs';
 import { useSectionInView } from '@/hooks/use-section-in-view';
+import { cn } from '@/lib/utils';
 
 export const ProjectsSection: FC = () => {
   const { ref } = useSectionInView('Projects', 0.5);
 
   return (
-    <Section ref={ref} id='projects' className='scroll-mt-[6rem]'>
+    <Section ref={ref} id='projects'>
       <SectionHeader>
         <SectionTitle>Projects</SectionTitle>
       </SectionHeader>
@@ -24,7 +26,7 @@ export const ProjectsSection: FC = () => {
         <a
           href='https://github.com/EDMIGHT?tab=repositories'
           target='_blank'
-          className='mx-auto block w-fit text-center text-xl font-medium text-muted-foreground hover:text-primary'
+          className={cn(buttonVariants({ variant: 'link' }), 'mx-auto')}
         >
           Explore more my projects
         </a>
