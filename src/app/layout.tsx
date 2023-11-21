@@ -8,7 +8,7 @@ import { ActiveSectionContextProvider } from '@/components/providers/active-sect
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { TailwindIndicator } from '@/components/tailwind-indicator';
 import { ThemeSwitcher } from '@/components/theme-switcher';
-import { SITE_CONFIG } from '@/configs/site.configs';
+import { APP_URL, SITE_CONFIG } from '@/configs/site.configs';
 import { fontSans } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 
@@ -35,13 +35,27 @@ export const metadata: Metadata = {
     title: SITE_CONFIG.name,
     description: SITE_CONFIG.desc,
     siteName: SITE_CONFIG.name,
-    images: [`${SITE_CONFIG.url}/opengraph-image.png`],
+    images: [
+      {
+        url: new URL(`${APP_URL}/api/og`).toString(),
+        width: 1200,
+        height: 630,
+        alt: 'Portfolio OG',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: SITE_CONFIG.name,
     description: SITE_CONFIG.desc,
-    images: [`${SITE_CONFIG.url}/twitter-image.png`],
+    images: [
+      {
+        url: new URL(`${APP_URL}/api/og`).toString(),
+        width: 1200,
+        height: 630,
+        alt: 'Portfolio OG',
+      },
+    ],
     creator: '@EDM1GHT',
   },
 };

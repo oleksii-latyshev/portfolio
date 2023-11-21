@@ -2,6 +2,7 @@ import { IInteractiveIcon, INavigation } from '@/types';
 
 export const POSITION = process.env.POSITION!;
 export const CV_URL = process.env.CV_URL!;
+export const APP_URL = process.env.APP_URL!;
 
 export const NAVIGATION: readonly INavigation[] = [
   {
@@ -58,12 +59,12 @@ export const SITE_CONFIG = {
   desc: 'Welcome to my portfolio. Here you will learn about me and view the projects that I have implemented',
   keywords: [
     'NextJS',
-    'Next.JS 13.4',
+    'Next.js 13.4',
     'NextJS 13.4',
     'React',
     'Latyshev Oleksii',
     'Latyshev',
-    'Fullstack',
+    'Full-stack',
     'Frontend',
     'Portfolio',
   ],

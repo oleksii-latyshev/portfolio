@@ -1,15 +1,14 @@
 import { ServerRuntime } from 'next';
 import { ImageResponse } from 'next/server';
 
+import { POSITION } from '@/configs/site.configs';
+
 export const runtime: ServerRuntime = 'edge';
 
 export async function GET() {
   try {
     const fontSemiBold = await fetch(
       new URL('../../../assets/fonts/Poppins-SemiBold.ttf', import.meta.url)
-    ).then((res) => res.arrayBuffer());
-    const fontMedium = await fetch(
-      new URL('../../../assets/fonts/Poppins-Medium.ttf', import.meta.url)
     ).then((res) => res.arrayBuffer());
 
     return new ImageResponse(
@@ -21,17 +20,17 @@ export async function GET() {
             background: 'black',
           }}
         >
-          <h2 tw='text-[7rem] font-bold tracking-tight m-0 p-0 uppercase text-zinc-50'>
-            Fullstack
-          </h2>
-          <h1 tw='text-6xl font-bold tracking-tight m-0 p-0 text-zinc-300'>
+          <h1 tw='text-8xl font-semibold uppercase tracking-tight m-0 p-0 text-zinc-50'>
             Oleksii Latyshev
           </h1>
+          <h2 tw='text-6xl font-semibold uppercase tracking-tight m-0 p-0 text-zinc-300'>
+            {POSITION}
+          </h2>
 
           <div
-            tw='absolute -top-[200px] -right-[200px] z-10 bg-blue-400/60 rounded-full h-[400px] w-[400px] '
+            tw='absolute -top-[175px] -right-[175px] z-10 bg-zinc-50/40 rounded-full h-[350px] w-[350px] '
             style={{
-              filter: 'blur(160px)',
+              filter: 'blur(140px)',
             }}
           />
         </div>
@@ -42,15 +41,9 @@ export async function GET() {
         fonts: [
           {
             name: 'Poppins',
-            data: fontMedium,
-            style: 'normal',
-            weight: 400,
-          },
-          {
-            name: 'Poppins',
             data: fontSemiBold,
             style: 'normal',
-            weight: 700,
+            weight: 600,
           },
         ],
       }
