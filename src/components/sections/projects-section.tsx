@@ -4,6 +4,7 @@ import { FC } from 'react';
 
 import { Project } from '@/components/project';
 import { buttonVariants } from '@/components/ui/button';
+import { Icons } from '@/components/ui/icons';
 import { Section, SectionContent, SectionHeader, SectionTitle } from '@/components/ui/section';
 import { MY_FAVORITE_PROJECTS } from '@/configs/my.configs';
 import { useSectionInView } from '@/hooks/use-section-in-view';
@@ -26,9 +27,10 @@ export const ProjectsSection: FC = () => {
         <a
           href='https://github.com/EDMIGHT?tab=repositories'
           target='_blank'
-          className={cn(buttonVariants({ variant: 'link' }), 'mx-auto')}
+          className={cn(buttonVariants({ variant: 'link' }), 'mx-auto p-0 gap-1 ')}
         >
           Explore more my projects
+          <Icons.externalLink className='h-5 w-5' />
         </a>
       </SectionContent>
     </Section>

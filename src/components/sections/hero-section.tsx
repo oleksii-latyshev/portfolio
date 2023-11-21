@@ -6,7 +6,7 @@ import { FC } from 'react';
 import { GhostCatCanvas } from '@/components/canvases/ghost-cat-canvas';
 import { buttonVariants } from '@/components/ui/button';
 import { Icons } from '@/components/ui/icons';
-import { SOCIAL_LINKS } from '@/configs/site.configs';
+import { CV_URL, POSITION, SOCIAL_LINKS } from '@/configs/site.configs';
 import { useSectionInView } from '@/hooks/use-section-in-view';
 import { cn } from '@/lib/utils';
 
@@ -28,7 +28,7 @@ export const HeroSection: FC = () => {
           Oleksii Latyshev
         </h1>
         <h2 className='text-3xl font-semibold uppercase tracking-tight text-muted-foreground lg:text-5xl'>
-          Fullstack developer
+          {POSITION}
         </h2>
         <ul className='flex flex-wrap items-center gap-2'>
           {SOCIAL_LINKS.map(({ icon, href }, i) => {
@@ -51,7 +51,7 @@ export const HeroSection: FC = () => {
           })}
           <li>
             <a
-              href='./cv.pdf'
+              href={CV_URL}
               target='_blank'
               className={cn(
                 buttonVariants({ variant: 'ghost', size: 'icon' }),

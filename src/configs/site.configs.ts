@@ -1,5 +1,8 @@
 import { IInteractiveIcon, INavigation } from '@/types';
 
+export const POSITION = process.env.POSITION!;
+export const CV_URL = process.env.CV_URL!;
+
 export const NAVIGATION: readonly INavigation[] = [
   {
     name: 'Home',

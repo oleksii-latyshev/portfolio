@@ -2,6 +2,7 @@ import '@/assets/styles/globals.css';
 
 import type { Metadata } from 'next';
 
+import { Footer } from '@/components/footer';
 import { Menu } from '@/components/menu';
 import { ActiveSectionContextProvider } from '@/components/providers/active-section-context-provider';
 import { ThemeProvider } from '@/components/providers/theme-provider';
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <ActiveSectionContextProvider>
             <Menu />
             {children}
+            <Footer />
             <TailwindIndicator />
             <ThemeSwitcher />
           </ActiveSectionContextProvider>

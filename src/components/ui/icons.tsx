@@ -1,5 +1,6 @@
 import {
   ArrowRight,
+  ExternalLink,
   Github,
   Linkedin,
   LucideIcon,
@@ -22,6 +23,7 @@ export const Icons = {
       />
     </svg>
   ),
+  externalLink: ExternalLink,
   figma: (props: LucideProps) => (
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128' {...props}>
       <path

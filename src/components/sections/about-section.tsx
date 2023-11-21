@@ -9,6 +9,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { Icons } from '@/components/ui/icons';
 import { Section, SectionContent, SectionHeader, SectionTitle } from '@/components/ui/section';
 import { MAIN_STACK_TECHNOLOGIES } from '@/configs/my.configs';
+import { CV_URL } from '@/configs/site.configs';
 import { useSectionInView } from '@/hooks/use-section-in-view';
 import { cn } from '@/lib/utils';
 
@@ -56,7 +57,7 @@ export const AboutSection: FC = () => {
             <Technologies technologies={MAIN_STACK_TECHNOLOGIES} />
           </div>
           <a
-            href='./cv.pdf'
+            href={CV_URL}
             target='_blank'
             className={cn(
               buttonVariants({ variant: 'link' }),
