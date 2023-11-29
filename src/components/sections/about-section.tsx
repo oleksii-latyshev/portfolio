@@ -47,10 +47,11 @@ export const AboutSection: FC = () => {
           className='flex-1 space-y-3'
         >
           <p className='text-lg font-medium leading-relaxed lg:text-xl'>
-            Hi, my name is Oleksii. I&apos;m a student with a passion for web development,
-            aiming to become a full-stack developer. What started as a hobby has turned into a
-            desire to transform it into a profession. I dedicate time every day to practice and
-            explore new technologies and opportunities in web development.
+            Hello, my name is Oleksii. I am a student with a passion for web development,
+            aspiring to become a Front-end developer with a profound understanding of web
+            development. What started as a hobby has transformed into a desire to turn it into
+            a profession. Every day, I dedicate time to practice and explore new technologies
+            and possibilities in web development.
           </p>
           <div className='space-y-1'>
             <h3 className='text-xl font-semibold lg:text-2xl'>My Main Stack:</h3>
